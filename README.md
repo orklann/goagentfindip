@@ -17,15 +17,20 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Features:
-    1. scan all possible google's IP
-    2. arrange IP speed, fast ahead
+    1. scan all possible google's IP.
+    
+    2. arrange IP speed, fast ahead.
+    
     3. it will print output in your terminal and out.txt file.
 
 How to run? you may need Ctrl+C to stop when you feel ip is enough, Enjoy!
-    python findip.py
+#    python findip.py
 
 NOTICE:
     1. If you don't want to scan all IPs, please delete some unwanted files in 
 ippool folder, it will scan remain IPs.
+
     2. You may need modify "thread_number" value to control the ip number parallelly check, default: 500
+    
     3. If you can get IPs, you can ignore errors when you PRESS Ctrl+C
+    
