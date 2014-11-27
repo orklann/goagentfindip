@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #How to run?
     python findip.py
     
-(You may need Ctrl+C to stop when you feel IPs are enough)
+(You may need Ctrl+C to stop when you feel IPs are enough.)
 
 #NOTICE:
 
