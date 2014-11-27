@@ -1,7 +1,11 @@
 goagentfindip
 =============
 
-a tiny tool to find google ip for goagent
+#Introduction
+
+A tiny tool to find google ip for goagent
+
+#License
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,10 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #NOTICE:
 
-1. If you don't want to scan all IPs, please delete some
-    unwanted files in ippool folder, it will scan remain IPs. 
-2. You may need modify "thread_number" value to control the
-    ip number parallelly check, default: 500.
-3. If you can get IPs, you can ignore errors when you PRESS
-    Ctrl+C
+1. If you don't want to scan all IPs, please delete some unwanted files in ippool folder, it will scan remain IPs. 
+2. You may need modify "thread_number" value to control the ip number parallelly check, default: 500.
+3. If you can get IPs, you can ignore errors when you PRESS Ctrl+C
     
