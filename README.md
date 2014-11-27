@@ -20,9 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #Features:
 
-1. scan all possible google's IP.
-2. arrange IP speed, fast ahead.
-3. it will print output in your terminal and out.txt file.
+1. Scan all possible google's IP.
+2. Auto sort IP with connectoin speed, fast ahead.
+3. Print output in your terminal and write to out.txt file.
 
 #How to run?
     python findip.py
