@@ -27,11 +27,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #How to run?
     python findip.py
     
-(You may need Ctrl+C to stop when you feel ip is enough, Enjoy!)
+(You may need Ctrl+C to stop when you feel IPs are enough)
 
 #NOTICE:
 
 1. If you don't want to scan all IPs, please delete some unwanted files in ippool folder, it will scan remain IPs. 
 2. You may need modify "thread_number" value to control the ip number parallelly check, default: 500.
 3. If you can get IPs, you can ignore errors when you PRESS Ctrl+C
+4. Enjoy!
     
