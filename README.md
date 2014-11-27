@@ -25,9 +25,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 3. Print output in your terminal and write to out.txt file.
 
 #How to run?
-Linux and MAC OS:
+#Linux and MAC OS:
     python findip.py
-Windows:
+#Windows:
     after install python, double click findip.py.
     
 (You may need Ctrl+C to stop when you feel IPs enough.)
