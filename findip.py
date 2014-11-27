@@ -12,7 +12,7 @@ else:
 ip_queue=multiprocessing.Queue()
 
 # how many ip parallelly check?
-thread_number=500
+thread_number=100
 
 # store threads' id
 thread_id=[]
