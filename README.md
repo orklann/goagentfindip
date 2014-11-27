@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     3. it will print output in your terminal and out.txt file.
 
 #How to run?
-    > python findip.py
+    python findip.py
     
     (You may need Ctrl+C to stop when you feel ip is enough, Enjoy!)
 
