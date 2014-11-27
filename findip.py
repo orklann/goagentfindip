@@ -109,8 +109,7 @@ if __name__ == '__main__':
         
                     # clean thread_id
                     thread_id=[]
-                
-            
+                    
         # deal with ip
         deal_ip()
         # quit
