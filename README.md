@@ -32,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 1. If you don't want to scan all IPs, please delete some
     unwanted files in ippool folder, it will scan remain IPs. 
 2. You may need modify "thread_number" value to control the
-    ip number parallelly check, the thread_number, default: 500.
+    ip number parallelly check, default: 500.
 3. If you can get IPs, you can ignore errors when you PRESS
     Ctrl+C
     
