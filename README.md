@@ -21,10 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #Features:
 
 1. Scan all possible google's IP.
-2. Auto sort IP with connectoin speed, fast ahead.
+2. Auto sort IP with connection speed, fast ahead.
 3. Print output in your terminal and write to out.txt file.
 4. Add random mechanism to scan.
 5. Ping test to improve IPs' quality.
+6. Show scanning progress!
 
 #How to run?
     Linux and MAC OS:
