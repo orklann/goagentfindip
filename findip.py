@@ -1,6 +1,20 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-import os,time,sys,multiprocessing
+#    This program is free software: you can redistribute it
+#    and/or modify it under the terms of the GNU General Public
+#    License as published by the Free Software Foundation, either
+#    version 3 of the License, or (at your option) any later
+#    version. This program is distributed in the hope that it
+#    will be useful, but WITHOUT ANY WARRANTY; without even the
+#    implied warranty of MERCHANTABILITY or FITNESS FOR A
+#    PARTICULAR PURPOSE. See the GNU General Public License for
+#    more details. You should have received a copy of the GNU
+#    General Public License along with this program. If not, see
+#    http://www.gnu.org/licenses/.
+
+from __future__ import print_function
+import os,time,sys,multiprocessing,random
 
 # python3 support, httplib renamed to http.client in python3
 if sys.version_info >= (3, 0):
@@ -11,6 +25,9 @@ else:
 # good google's ip [elapse time, ip]
 ip_queue=multiprocessing.Queue()
 
+# need about approximate number of ips, program will stop itself?
+ip_max_need=250
+ 
 # how many ip parallelly check?, one ip one threadper.
 thread_number=100
 
@@ -32,8 +49,18 @@ def iplookup(ip,q):
         en=time.time()
         result=str(response.status)+' '+response.reason
         if '200 OK' in result:
-            q.put([en-st, ip])
-            print(ip+' is Good')
+            if sys.platform == "linux" or sys.platform == "linux2":
+                # linux
+                ping_ans=os.system("ping -c3 "+ip+">/dev/null")
+            elif sys.platform == "darwin":
+                # OS X
+                ping_ans=os.system("ping -c3 "+ip+">/dev/null")
+            elif sys.platform == "win32" or sys.platform == "win64":
+                # windows
+                ping_ans=os.system("ping -n 3 "+ip+">NUL")
+            
+            if not ping_ans:
+                q.put([en-st, ip])
             conn.close()
     except:
         pass
@@ -77,47 +104,66 @@ if __name__ == '__main__':
     ippool_files=["./ippool/"+s for s in os.listdir("./ippool")]
 
     try:
+        # read all ips to lines
+        lines=[]
         for ip_file in ippool_files:
+            # open file
             with open(ip_file, 'r') as infile:
-                lines=infile.readlines()
+                lines.extend(infile.readlines())                       
                 # close opened file
                 infile.close()
-                # split text to list with '\n' end
-                lines=[x.rstrip('\n') for x in lines]
-                # split ip to 2d array every read_number
-                ip_all=[lines[i:i+thread_number] for i in range(0,len(lines),
-                            thread_number)]
-                
-                for ips in ip_all:
-                    format_str="scan from "
-                    format_str+="{:>15}    to    {:>15} ++please be patient"
-                    print(format_str.format(ips[0],ips[-1]))
-                    for ip in ips:
-                        p = multiprocessing.Process(target=iplookup,
-                                                    args=(ip,ip_queue,))
-                        thread_id.append(p)
-                        thread_id[-1].daemon=True
-                        thread_id[-1].start()
-            
-                    # wait for finish
-                    time.sleep(4)
-    
-                    # killall remain thread
-                    for x in thread_id:
-                        if x.is_alive():
-                            x.terminate()
+
+        # split text to list with '\n' end
+        lines=[x.rstrip('\n') for x in lines]
+        # split ip to 2d array every read_number
+        ip_all=[lines[i:i+thread_number] for i in range(0,len(lines),
+                    thread_number)]
+
+        # sort ip_all randomly
+        ip_all=sorted(ip_all, key=lambda *args: random.random())
         
-                    # clean thread_id
-                    thread_id=[]
+        for ips in ip_all:
+            # print scanning content to terminal
+            format_str="scan from "
+            format_str+="{:>15}    to    {:>15} "
+            format_str=format_str.format(ips[0],ips[-1])
+            print(format_str,end='')
+
+            for ip in ips:
+                p = multiprocessing.Process(target=iplookup,
+                                            args=(ip,ip_queue,))
+                thread_id.append(p)
+                thread_id[-1].daemon=True
+                thread_id[-1].start()
+    
+            # wait for finish
+            time.sleep(10)
+
+            # killall remain thread
+            for x in thread_id:
+                if x.is_alive():
+                    x.terminate()
+
+            # clean thread_id
+            thread_id=[]
+
+            # break when it reach approximate ips
+            if ip_queue.qsize()>ip_max_need:
+                print("\r\nIPs reached needs")
+                break
+            else:
+                good_ips=ip_queue.qsize()
+                print("good IPs: %d " % good_ips,end='')
+                progress=float(good_ips)/ip_max_need
+                print("progress: %.1f%%" % progress)
                     
-        # deal with ip
+        # finished all ip scanning, I need deal with found ip
         deal_ip()
-        # quit
+        # I have already finished my mission, so, i quit
         sys.exit(0)
 
     except KeyboardInterrupt:
-
-        # deal with ip
+        # when user pressed Ctrl+C, I need to deal with found ip
         deal_ip()
-        # quit   
+        # I have already finished my mission, so, i quit  
         sys.exit(0)
