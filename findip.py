@@ -11,7 +11,7 @@ else:
 # good google's ip [elapse time, ip]
 ip_queue=multiprocessing.Queue()
 
-# how many ip parallelly check?
+# how many ip parallelly check?, one ip one threadper.
 thread_number=100
 
 # store threads' id
