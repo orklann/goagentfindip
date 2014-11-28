@@ -100,6 +100,8 @@ if __name__ == '__main__':
     # get all files in ./ippool
     ippool_files=["./ippool/"+s for s in os.listdir("./ippool")]
 
+    # record program start time, used to calculate elapse time
+    program_st=time.time()
     try:
         # read all ips to lines
         lines=[]
@@ -121,9 +123,9 @@ if __name__ == '__main__':
         
         for ips in ip_all:
             # print scanning content to terminal
-            format_str="scan from "
-            format_str+="{:>15}    to    {:>15} "
-            format_str=format_str.format(ips[0],ips[-1])
+            format_str="Scan: {:>8}.x.x, {:>3} IPs, "
+            format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
+                thread_number)
             print(format_str,end='')
 
             # store threads' id
@@ -150,9 +152,11 @@ if __name__ == '__main__':
                 break
             else:
                 good_ips=ip_queue.qsize()
-                print("good IPs: %d " % good_ips,end='')
+                print("good IPs: %d, " % good_ips,end='')
                 progress=int(float(good_ips)/ip_max_need*100)
-                print("progress: %d%%" % progress)
+                print("progress: %d%%, " % progress,end='')
+                time_elapse=int(time.time()-program_st)
+                print("elapse: %ds" % time_elapse)
                     
         # finished all ip scanning, I need deal with found ip
         deal_ip()
