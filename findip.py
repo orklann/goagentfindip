@@ -31,9 +31,6 @@ ip_max_need=250
 # how many ip parallelly check?, one ip one threadper.
 thread_number=100
 
-# store threads' id
-thread_id=[]
-
 def iplookup(ip,q):
     """ Check google's ip is suitable for goagent. """
     try:
@@ -129,6 +126,9 @@ if __name__ == '__main__':
             format_str=format_str.format(ips[0],ips[-1])
             print(format_str,end='')
 
+            # store threads' id
+            thread_id=[]
+            # python multiprocessing
             for ip in ips:
                 p = multiprocessing.Process(target=iplookup,
                                             args=(ip,ip_queue,))
@@ -143,9 +143,6 @@ if __name__ == '__main__':
             for x in thread_id:
                 if x.is_alive():
                     x.terminate()
-
-            # clean thread_id
-            thread_id=[]
 
             # break when it reach approximate ips
             if ip_queue.qsize()>ip_max_need:
