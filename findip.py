@@ -31,6 +31,9 @@ ip_max_need=250
 # how many ip parallelly check?, one ip one threadper.
 thread_number=100
 
+# store good ip
+google_ip=[]
+
 def iplookup(ip,q):
     """ Check google's ip is suitable for goagent. """
     try:
@@ -62,15 +65,8 @@ def iplookup(ip,q):
     except:
         pass
 
-def deal_ip():
+def deal_ip(google_ip):
     """ Get, arrange and format ipfor goagent. """
-    # get all suitable ip in ip_queue
-    google_ip=[]
-    while not ip_queue.empty():
-        try:
-            google_ip.append(ip_queue.get())
-        except:
-            pass
 
     # sort [elapse_time, ip] with eclapse_time
     arranged_ip=sorted(google_ip,key=lambda l:l[0])
@@ -146,12 +142,19 @@ if __name__ == '__main__':
                 if x.is_alive():
                     x.terminate()
 
+            # get all suitable ip in ip_queue
+            while not ip_queue.empty():
+                try:
+                    google_ip.append(ip_queue.get())
+                except:
+                    pass
+            
             # break when it reach approximate ips
-            if ip_queue.qsize()>ip_max_need:
+            if len(google_ip)>ip_max_need:
                 print("\r\nIPs reached needs")
-                break
+                break   
             else:
-                good_ips=ip_queue.qsize()
+                good_ips=len(google_ip)
                 print("good IPs: %d, " % good_ips,end='')
                 progress=int(float(good_ips)/ip_max_need*100)
                 print("progress: %d%%, " % progress,end='')
@@ -159,12 +162,12 @@ if __name__ == '__main__':
                 print("elapse: %ds" % time_elapse)
                     
         # finished all ip scanning, I need deal with found ip
-        deal_ip()
+        deal_ip(google_ip)
         # I have already finished my mission, so, i quit
         sys.exit(0)
 
     except KeyboardInterrupt:
         # when user pressed Ctrl+C, I need to deal with found ip
-        deal_ip()
+        deal_ip(google_ip)
         # I have already finished my mission, so, i quit  
         sys.exit(0)
