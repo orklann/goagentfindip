@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #Features:
 
-1. Scan all possible google's IP.
+1. Scan all possible google's IPs.
 2. Auto sort IP with connection speed, fast ahead.
 3. Print output in your terminal and write to out.txt file.
 4. Add random mechanism to scan.
