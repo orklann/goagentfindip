@@ -154,8 +154,8 @@ if __name__ == '__main__':
             else:
                 good_ips=ip_queue.qsize()
                 print("good IPs: %d " % good_ips,end='')
-                progress=float(good_ips)/ip_max_need
-                print("progress: %.1f%%" % progress)
+                progress=int(float(good_ips)/ip_max_need*100)
+                print("progress: %d%%" % progress)
                     
         # finished all ip scanning, I need deal with found ip
         deal_ip()
