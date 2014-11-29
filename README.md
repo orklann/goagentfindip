@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 2. Auto sort IP with connection speed, fast ahead.
 3. Print output in your terminal and write to out.txt file.
 4. Add random mechanism to scan.
-5. Webpage content analyze to improve IPs' quality.
+5. Analyze webpage content to improve IPs' quality.
 6. Show scanning progress!
 7. High speed lookup.
 
