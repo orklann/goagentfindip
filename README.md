@@ -46,26 +46,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #TEST:
 
-    python3 findip.py
+    python3 findip.py (linux, thread_num=100, ip_max_need=250)
 --------------------------------------------------------------------
-
-Scan:  173.194.x.x, 100 IPs, good IPs: 0, progress: 0%, elapse: 3s
-
-....
 
 Scan:   74.125.x.x, 100 IPs, good IPs: 255, progress: 102%, elapse: 399s
 
 ------IPs reached needs-----
 
 
-    python2 findip.py
+    python2 findip.py (linux, thread_num=100, ip_max_need=250)
 --------------------------------------------------------------------------
-Scan:  173.194.x.x, 100 IPs, good IPs: 0, progress: 0%, elapse: 3s
-
-...
 
 Scan:   64.233.x.x, 100 IPs, good IPs: 266, progress: 106%, elapse: 553s
 
+------IPs reached needs-----
+
+    python3 findip.py (linux, thread_num=500, ip_max_need=250)
+---------------------------------------------------------------------
+
+Scan:   74.125.x.x, 500 IPs, good IPs: 299, progress: 119%, elapse: 56s
 ------IPs reached needs-----
 
 Due to some reasons, I DO NOT print out found IPs.
