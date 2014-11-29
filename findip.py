@@ -72,9 +72,7 @@ def deal_ip(google_ip):
     arranged_ip=sorted(google_ip,key=lambda l:l[0])
 
     # format ip for goagent
-    format_ip=''
-    for ip in arranged_ip:
-        format_ip+=ip[1]+'|'
+    format_ip="|".join([ip[1] for ip in arranged_ip])
 
     # print arranged good ip, fast ahead
     if format_ip:
