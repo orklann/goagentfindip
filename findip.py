@@ -76,13 +76,13 @@ def deal_ip(google_ip):
     # print arranged good ip, fast ahead
     if format_ip:
         print("\r\nOutput:\r\n")
-        print(format_ip[:-1])
+        print(format_ip)
         print("\r\nPlease wait about 3 minutes to use goagent!!!\r\n"+\
             "I don't know why, but the scanning does affect it.\r\n"+\
             "You may have a cup of coffee, ^_^\r\n"+\
             "Enjoy!")
         write_file=open('out.txt', 'w')
-        write_file.write(format_ip[:-1]+'\r\n')
+        write_file.write(format_ip+'\r\n')
         write_file.close()
     else:
         print("\r\nI am sorry, nothing found out")
@@ -160,11 +160,19 @@ if __name__ == '__main__':
                     
         # finished all ip scanning, I need deal with found ip
         deal_ip(google_ip)
-        # I have already finished my mission, so, i quit
-        sys.exit(0)
+        
+        # windows system, leave cmd window unclosed.
+        if sys.platform == "win32" or sys.platform == "win64":
+            os.system("pause")
+        else:
+            sys.exit(0)
 
     except KeyboardInterrupt:
         # when user pressed Ctrl+C, I need to deal with found ip
         deal_ip(google_ip)
-        # I have already finished my mission, so, i quit  
-        sys.exit(0)
+        
+        # windows system, leave cmd window unclosed.
+        if sys.platform == "win32" or sys.platform == "win64":
+            os.system("pause")
+        else:
+            sys.exit(0)
