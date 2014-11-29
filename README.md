@@ -65,6 +65,7 @@ Scan:   64.233.x.x, 100 IPs, good IPs: 266, progress: 106%, elapse: 553s
 ---------------------------------------------------------------------
 
 Scan:   74.125.x.x, 500 IPs, good IPs: 299, progress: 119%, elapse: 56s
+
 ------IPs reached needs-----
 
 Due to some reasons, I DO NOT print out found IPs.
