@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 4. Add random mechanism to scan.
 5. Webpage content analyze to improve IPs' quality.
 6. Show scanning progress!
+7. High speed lookup.
 
 #How to run?
     Linux and MAC OS:
