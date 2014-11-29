@@ -49,19 +49,13 @@ def iplookup(ip,q):
         en=time.time()
         result=str(response.status)+' '+response.reason
         if '200 OK' in result:
-            if sys.platform == "linux" or sys.platform == "linux2":
-                # linux
-                ping_ans=os.system("ping -c3 "+ip+">/dev/null")
-            elif sys.platform == "darwin":
-                # OS X
-                ping_ans=os.system("ping -c3 "+ip+">/dev/null")
-            elif sys.platform == "win32" or sys.platform == "win64":
-                # windows
-                ping_ans=os.system("ping -n 3 "+ip+">NUL")
-            
-            if not ping_ans:
+            # read page
+            html_content=response.read(300).decode("utf-8", "ignore")
+            # check page title
+            check_ans=html_content.find('<title>Google</title>')
+            if check_ans!=-1:          
                 q.put([en-st, ip])
-            conn.close()
+        conn.close()
     except:
         pass
 
@@ -128,16 +122,11 @@ if __name__ == '__main__':
                 p = multiprocessing.Process(target=iplookup,
                                             args=(ip,ip_queue,))
                 thread_id.append(p)
-                thread_id[-1].daemon=True
-                thread_id[-1].start()
-    
-            # wait for finish
-            time.sleep(10)
+                p.daemon=True
+                p.start()
 
-            # killall remain thread
-            for x in thread_id:
-                if x.is_alive():
-                    x.terminate()
+            for thread in thread_id:
+                thread.join(6)
 
             # get all suitable ip in ip_queue
             while not ip_queue.empty():
@@ -145,19 +134,20 @@ if __name__ == '__main__':
                     google_ip.append(ip_queue.get())
                 except:
                     pass
-            
+     
+            # print infomation to terminal     
+            good_ips=len(google_ip)
+            print("good IPs: %d, " % good_ips,end='')
+            progress=int(float(good_ips)/ip_max_need*100)
+            print("progress: %d%%, " % progress,end='')
+            time_elapse=int(time.time()-program_st)
+            print("elapse: %ds" % time_elapse)
+
             # break when it reach approximate ips
             if len(google_ip)>ip_max_need:
-                print("\r\nIPs reached needs")
-                break   
-            else:
-                good_ips=len(google_ip)
-                print("good IPs: %d, " % good_ips,end='')
-                progress=int(float(good_ips)/ip_max_need*100)
-                print("progress: %d%%, " % progress,end='')
-                time_elapse=int(time.time()-program_st)
-                print("elapse: %ds" % time_elapse)
-                    
+                print("\r\n------IPs reached needs-----")
+                break
+             
         # finished all ip scanning, I need deal with found ip
         deal_ip(google_ip)
         
@@ -176,3 +166,4 @@ if __name__ == '__main__':
             os.system("pause")
         else:
             sys.exit(0)
+            
