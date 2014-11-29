@@ -110,7 +110,7 @@ if __name__ == '__main__':
         
         for ips in ip_all:
             # print scanning content to terminal
-            format_str="Scan: {:>8}.x.x, {:>3} IPs, "
+            format_str="\rScan: {:>8}.x.x, {:>3} IPs, "
             format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
                 thread_number)
             print(format_str,end='')
@@ -141,7 +141,7 @@ if __name__ == '__main__':
             progress=int(float(good_ips)/ip_max_need*100)
             print("progress: %d%%, " % progress,end='')
             time_elapse=int(time.time()-program_st)
-            print("elapse: %ds" % time_elapse)
+            print("elapse: %ds" % time_elapse,end='')
 
             # break when it reach approximate ips
             if len(google_ip)>ip_max_need:
