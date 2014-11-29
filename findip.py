@@ -67,10 +67,9 @@ def iplookup(ip,q):
 
 def deal_ip(google_ip):
     """ Get, arrange and format ipfor goagent. """
-
     # sort [elapse_time, ip] with eclapse_time
     arranged_ip=sorted(google_ip,key=lambda l:l[0])
-
+    
     # format ip for goagent
     format_ip="|".join([ip[1] for ip in arranged_ip])
 
