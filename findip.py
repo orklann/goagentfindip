@@ -107,7 +107,7 @@ if __name__ == '__main__':
 
         # split text to list with '\n' end
         lines=[x.rstrip('\n') for x in lines]
-        # split ip to 2d array every read_number
+        # split ip to 2d array every tread_number
         ip_all=[lines[i:i+thread_number] for i in range(0,len(lines),
                     thread_number)]
 
