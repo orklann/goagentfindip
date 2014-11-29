@@ -50,7 +50,10 @@ python3 findip.py
 --------------------------------------------------------------------
 
 Scan:  173.194.x.x, 100 IPs, good IPs: 0, progress: 0%, elapse: 6s
+
+
 Scan:   74.125.x.x, 100 IPs, good IPs: 0, progress: 0%, elapse: 9s
+
 Scan:   74.125.x.x, 100 IPs, good IPs: 26, progress: 10%, elapse: 14s
 Scan:    72.14.x.x, 100 IPs, good IPs: 26, progress: 10%, elapse: 18s
 Scan:  216.239.x.x, 100 IPs, good IPs: 26, progress: 10%, elapse: 21s
