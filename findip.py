@@ -85,7 +85,7 @@ def deal_ip(google_ip):
 if __name__ == '__main__':
 
     # get all files in ./ippool
-    ippool_files=["./ippool/"+s for s in os.listdir("./ippool")]
+    ippool_files=["./ippool/%s" % s for s in os.listdir("./ippool")]
 
     # record program start time, used to calculate elapse time
     program_st=time.time()
