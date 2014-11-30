@@ -132,7 +132,7 @@ if __name__ == '__main__':
                 p.start()
 
             for p in procs:
-                p.join(5)
+                p.join(6)
                 if p.is_alive():
                     p.terminate() 
                     
