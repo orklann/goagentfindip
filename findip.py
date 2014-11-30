@@ -126,8 +126,10 @@ if __name__ == '__main__':
                 p.start()
 
             for thread in thread_id:
-                thread.join(6)
-
+                thread.join(5)
+                if thread.is_alive():
+                    thread.terminate() 
+                    
             # get all suitable ip in ip_queue
             while not ip_queue.empty():
                 try:
