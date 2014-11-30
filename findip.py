@@ -122,20 +122,19 @@ if __name__ == '__main__':
             time_elapse=int(time.time()-program_st)
             print("elapse: %ds" % time_elapse,end='')
 
-            # store threads' id
-            thread_id=[]
             # python multiprocessing
+            procs=[]
             for ip in ips:
                 p = multiprocessing.Process(target=iplookup,
                                             args=(ip,ip_queue,))
-                thread_id.append(p)
+                procs.append(p)
                 p.daemon=True
                 p.start()
 
-            for thread in thread_id:
-                thread.join(5)
-                if thread.is_alive():
-                    thread.terminate() 
+            for p in procs:
+                p.join(5)
+                if p.is_alive():
+                    p.terminate() 
                     
             # get all suitable ip in ip_queue
             while not ip_queue.empty():
