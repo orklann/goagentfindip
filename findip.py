@@ -114,6 +114,13 @@ if __name__ == '__main__':
             format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
                 thread_number)
             print(format_str,end='')
+            # show progress and elapse time
+            good_ips=len(google_ip)
+            print("good IPs: %d, " % good_ips,end='')
+            progress=int(float(good_ips)/ip_max_need*100)
+            print("progress: %d%%, " % progress,end='')
+            time_elapse=int(time.time()-program_st)
+            print("elapse: %ds" % time_elapse,end='')
 
             # store threads' id
             thread_id=[]
@@ -136,14 +143,6 @@ if __name__ == '__main__':
                     google_ip.append(ip_queue.get())
                 except:
                     pass
-     
-            # print infomation to terminal     
-            good_ips=len(google_ip)
-            print("good IPs: %d, " % good_ips,end='')
-            progress=int(float(good_ips)/ip_max_need*100)
-            print("progress: %d%%, " % progress,end='')
-            time_elapse=int(time.time()-program_st)
-            print("elapse: %ds" % time_elapse,end='')
 
             # break when it reach approximate ips
             if len(google_ip)>ip_max_need:
