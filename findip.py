@@ -82,6 +82,32 @@ def deal_ip(google_ip):
         print("\r\nI am sorry, nothing found out")
         print("You may need to rerun it, and wait for it more time.")
 
+
+def show_progress(ips, thread_number):
+    """ show something to terminal """
+    # print scanning content to terminal
+    format_str="\rScan: {:>8}.x.x, {:>3} IPs, "
+    format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
+        thread_number)
+    print(format_str,end='')
+    # show progress and elapse time
+    good_ips=len(google_ip)
+    print("good IPs: %d, " % good_ips,end='')
+    progress=int(float(good_ips)/ip_max_need*100)
+    print("progress: %d%%, " % progress,end='')
+    time_elapse=int(time.time()-program_st)
+    print("elapse: %ds" % time_elapse,end='')
+
+def sys_exit():
+    """ system exit() """
+    # windows system, leave cmd window unclosed.
+    if sys.platform == "win32" or sys.platform == "win64":
+        os.system("pause")
+    else:
+        sys.exit(0)
+
+
+
 if __name__ == '__main__':
 
     # get all files in ./ippool
@@ -109,18 +135,8 @@ if __name__ == '__main__':
         ip_all=sorted(ip_all, key=lambda *args: random.random())
         
         for ips in ip_all:
-            # print scanning content to terminal
-            format_str="\rScan: {:>8}.x.x, {:>3} IPs, "
-            format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
-                thread_number)
-            print(format_str,end='')
-            # show progress and elapse time
-            good_ips=len(google_ip)
-            print("good IPs: %d, " % good_ips,end='')
-            progress=int(float(good_ips)/ip_max_need*100)
-            print("progress: %d%%, " % progress,end='')
-            time_elapse=int(time.time()-program_st)
-            print("elapse: %ds" % time_elapse,end='')
+            # show something to terminal
+            show_progress(ips, thread_number)
 
             # python multiprocessing
             procs=[]
@@ -144,39 +160,21 @@ if __name__ == '__main__':
                     pass
 
             # break when it reach approximate ips
-            if len(google_ip)>ip_max_need:
+            if len(google_ip)>=ip_max_need:
                 # update the content of terminal
-                format_str="\rScan: {:>8}.x.x, {:>3} IPs, "
-                format_str=format_str.format(".".join(ips[0].split('.')[0:-2]),
-                    thread_number)
-                print(format_str,end='')
-                # show progress and elapse time
-                good_ips=len(google_ip)
-                print("good IPs: %d, " % good_ips,end='')
-                progress=int(float(good_ips)/ip_max_need*100)
-                print("progress: %d%%, " % progress,end='')
-                time_elapse=int(time.time()-program_st)
-                print("elapse: %ds" % time_elapse,end='')
+                show_progress(ips, thread_number)
 
-                print("\r\n------IPs reached needs-----")
+                print("\r\nIPs reached needs.")
                 break
              
         # finished all ip scanning, I need deal with found ip
         deal_ip(google_ip)
-        
-        # windows system, leave cmd window unclosed.
-        if sys.platform == "win32" or sys.platform == "win64":
-            os.system("pause")
-        else:
-            sys.exit(0)
+        # exit
+        sys_exit()
 
     except KeyboardInterrupt:
         # when user pressed Ctrl+C, I need to deal with found ip
         deal_ip(google_ip)
+        # exit
+        sys_exit()
         
-        # windows system, leave cmd window unclosed.
-        if sys.platform == "win32" or sys.platform == "win64":
-            os.system("pause")
-        else:
-            sys.exit(0)
-            
