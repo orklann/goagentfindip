@@ -69,7 +69,7 @@ def deal_ip(google_ip):
 
     # print arranged good ip, fast ahead
     if format_ip:
-        print("\r\nOutput:\r\n")
+        print("\r\nOutput, total good IPs: %d\r\n" % len(arranged_ip))
         print(format_ip)
         print("\r\nPlease wait about 3 minutes to use goagent!!!\r\n"+\
             "I don't know why, but the scanning does affect it.\r\n"+\
