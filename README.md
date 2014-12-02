@@ -131,5 +131,5 @@ Due to some reasons, I DO NOT print out found IPs.
 2. Windows hangs or freezes when run this program?
 
     I am sorry, neither do I have solutions, but you can modify 
-        thread_number(at line 32) to a smaller value, for example, 50.
+        thread_number(at line 32) to a smaller value, for example, 50, 
         and try again.
