@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #TEST:
 
-Linux, RAM: 512MB, Single Core, IPs: 250, 50 Parallelly, Python3.4(test 19 times)
+Linux, RAM: 512MB, Single Core, IPs: 250, 50 Parallelly, Python3.4
 
 Elapse time(seconds): 
 
