@@ -91,7 +91,7 @@ time(s)
 
             2. UrlFetch Data Sent/Received：22MB/minute
 
-                Please see: [Visit Google Appengine DOCS](https://cloud.google.com/appengine/docs/quotas)
+                Please see: https://cloud.google.com/appengine/docs/quotas
         
         Goagent canceled pagespeed due to Google withdrew pagespeed servers from China.
     
