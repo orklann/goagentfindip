@@ -42,8 +42,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 1. If you don't want to scan all IPs, please delete some unwanted files in ippool folder, it will scan remain IPs. 
 2. You may need modify "thread_number" value, depending on your hardware, to control the ip number parallelly scanning, default: 100.
 3. You may need to modify "ip_max_need" value to get numbers of IPs as you want, default: 250.
-4. If you can get IPs, you can ignore errors when you press Ctrl+C
-5. Enjoy!
+4. If you can get IPs, you can ignore errors when you press Ctrl+C.
+5. This program will sort IPs by elapsed time, fast ahead. Due to random scanning mechanism, those first found IPs are not the fastest. Please don't set ip_max_need to a very small value. But you can finally choose first about 40 IPs to proxy.ini(40 is personal experience).
+6. Enjoy!
 
 #Test:
 
@@ -97,7 +98,7 @@ time(s)
     Second,
     
         Too many IPs in proxy.ini, will slow down your average speed. I personally thank 
-            250 is well.
+            40 is well.
     
     However you also can try to find faster IPs by modifying findip.py file:
     
