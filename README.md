@@ -127,8 +127,7 @@ time(s)
             p.join(3.1)
     
     
-        This will filter slow IPs, but fewer IPs can be found, 
-            and need wait for more time.
+        This will filter slow IPs, but may need more time.
     
     Enjoy!
 
