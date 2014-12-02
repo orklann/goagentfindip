@@ -110,21 +110,21 @@ time(s)
             else:
                 conn=httplib.HTTPSConnection(ip,timeout=3)
         
-        to smaller timeout value, example here is: 2.4
+        to smaller timeout value, example here is: 1.5
     
             # python3 will use http.client.HTTPSConnection
             if sys.version_info >= (3, 0):
-                conn=http.client.HTTPSConnection(ip,timeout=2.4)
+                conn=http.client.HTTPSConnection(ip,timeout=1.5)
             else:
-                conn=httplib.HTTPSConnection(ip,timeout=2.4)
+                conn=httplib.HTTPSConnection(ip,timeout=1.5)
     
     
-        and modify join time(about 1.5s greater than timeout blew) at line 151, 
-        example here is 3.9:
+        and modify join time(about 1.5s greater than timeout above) at line 151, 
+        example here is 3.1:
     
             p.join(6)
         to 
-            p.join(3.9)
+            p.join(3.1)
     
     
         This will filter slow IPs, but fewer IPs can be found, 
