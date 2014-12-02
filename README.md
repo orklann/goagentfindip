@@ -127,3 +127,8 @@ Due to some reasons, I DO NOT print out found IPs.
             and need wait for more time.
     
     Enjoy!
+
+2. Windows hangs or freezes when run this program?
+
+    I am sorry, neither do I have solutions, but you can modify 
+        thread_number to smaller value, for example, 50.
