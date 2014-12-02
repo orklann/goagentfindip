@@ -79,6 +79,7 @@ Due to some reasons, I DO NOT print out found IPs.
     
 #FAQ
 1. Many IPs good, but slow speed?
+
     First,
 
         Free Google App Engine, has it's own limits:
@@ -91,7 +92,7 @@ Due to some reasons, I DO NOT print out found IPs.
         
         Goagent canceled pagespeed due to Google withdrew pagespeed servers from China.
     
-    Second:
+    Second,
     
         Too many IPs in proxy.ini, will slow down your average speed. I personally thank 250 is well.
     
