@@ -27,16 +27,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 5. Analyze webpage content and use SSL to improve IPs' quality.
 6. Show scanning progress!
 7. Fastly lookup.
+8. Python and Python3 support.
 
 #How to run?
     Linux and MAC OS:
-        python findip.py
+        python findip.py or python3 findip.py
     Windows:
         after install python, double click findip.py.
     
 (You may need Ctrl+C to stop when you feel IPs enough.)
 
-#NOTICE:
+#Notice:
 
 1. If you don't want to scan all IPs, please delete some unwanted files in ippool folder, it will scan remain IPs. 
 2. You may need modify "thread_number" value, depending on your hardware, to control the ip number parallelly check, default: 100.
@@ -44,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 4. If you can get IPs, you can ignore errors when you PRESS Ctrl+C
 5. Enjoy!
 
-#TEST:
+#Test:
 
 Linux, RAM: 512MB, Single Core, IPs: 250, 50 Parallelly, Python3.4
 
