@@ -53,7 +53,7 @@ Elapse time(seconds):
 1823, 1513, 1581, 1015, 1010, 833, 782, 844, 484, 961, 1330, 860, 1391, 1157, 515 , 1238, 848, 1703, 1969
     
 ```
-       Linux, RAM: 512MB, Single Core, IPs: 250, 50 Parallelly, Python2.7.8
+       Linux, RAM: 512MB, Single Core, IPs: 250, 50 Parallelly, Python3.4
        
 time(s) 
   2000 ++------+------+-------+------+-------+------+-------+------+------+A
