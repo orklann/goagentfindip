@@ -80,14 +80,19 @@ Due to some reasons, I DO NOT print out found IPs.
 #FAQ
 1. Many IPs good, but slow speed?
     First,
+
         Free Google App Engine, has it's own limits:
+
             1. Outgoing/Incoming Bandwidth：1GB/day、56MB/minute
+
             2. UrlFetch Data Sent/Received：22MB/minute
+
                 Please see: https://cloud.google.com/appengine/docs/quotas
         
         Goagent canceled pagespeed due to Google withdrew pagespeed servers from China.
     
     Second:
+    
         Too many IPs in proxy.ini, will slow down your average speed. I personally thank 250 is well.
     
     However you also can try to find faster IPs by modifying findip.py file:
@@ -114,6 +119,7 @@ Due to some reasons, I DO NOT print out found IPs.
             p.join(6)
         to 
             p.join(4)
+    
     
         This will filter slow IPs, but fewer IPs can be found, and need wait for more time.
     
