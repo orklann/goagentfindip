@@ -94,7 +94,8 @@ Due to some reasons, I DO NOT print out found IPs.
     
     Second,
     
-        Too many IPs in proxy.ini, will slow down your average speed. I personally thank 250 is well.
+        Too many IPs in proxy.ini, will slow down your average speed. I personally thank 
+            250 is well.
     
     However you also can try to find faster IPs by modifying findip.py file:
     
@@ -122,6 +123,7 @@ Due to some reasons, I DO NOT print out found IPs.
             p.join(4)
     
     
-        This will filter slow IPs, but fewer IPs can be found, and need wait for more time.
+        This will filter slow IPs, but fewer IPs can be found, 
+            and need wait for more time.
     
     Enjoy!
