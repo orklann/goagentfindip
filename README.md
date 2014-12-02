@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 2. You may need modify "thread_number" value, depending on your hardware, to control the ip number parallelly scanning, default: 100.
 3. You may need to modify "ip_max_need" value to get numbers of IPs as you want, default: 250.
 4. If you can get IPs, you can ignore errors when you press Ctrl+C.
-5. This program will sort IPs by elapsed time, fast ahead. Due to random scanning mechanism, those first found IPs are not the fastest. Please don't set ip_max_need to a very small value. To my experience, leave ip_max_need as default or modify it to a greater one, but finally choosing first about 40 IPs to proxy.ini will be OK.
+5. This program will sort IPs by elapsed time, fast ahead. Due to random scanning mechanism, those first found IPs are not the fastest. Please don't set ip_max_need to a very small value. To my experience, leave ip_max_need as default or modify it to a greater one, but finally choosing first about 40 IPs to proxy.ini will be nice.
 6. Enjoy!
 
 #Test:
