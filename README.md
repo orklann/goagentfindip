@@ -118,7 +118,8 @@ time(s)
                 conn=httplib.HTTPSConnection(ip,timeout=2.4)
     
     
-        and modify join time(about 1.5s greater than timeout blew) at line 151, example here is 4.5:
+        and modify join time(about 1.5s greater than timeout blew) at line 151, 
+        example here is 4.5:
     
             p.join(6)
         to 
