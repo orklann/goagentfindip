@@ -77,3 +77,44 @@ Scan:   64.233.x.x, 500 IPs, good IPs: 256, progress: 102%, elapse: 156s
 
 Due to some reasons, I DO NOT print out found IPs.
     
+#FAQ
+1. Many IPs good, but slow speed?
+    First,
+        Free Google App Engine, has it's own limits:
+            1. Outgoing/Incoming Bandwidth：1GB/day、56MB/minute
+            2. UrlFetch Data Sent/Received：22MB/minute
+                Please see: https://cloud.google.com/appengine/docs/quotas
+        
+        Goagent canceled pagespeed due to Google withdrew pagespeed servers from China.
+    
+    Second:
+        Too many IPs in proxy.ini, will slow down your average speed. I personally thank 250 is well.
+    
+    However you also can try to find faster IPs by modifying findip.py file:
+    
+        begin with 40 line:
+    
+            # python3 will use http.client.HTTPSConnection
+            if sys.version_info >= (3, 0):
+                conn=http.client.HTTPSConnection(ip,timeout=3)
+            else:
+                conn=httplib.HTTPSConnection(ip,timeout=3)
+        
+        to smaller timeout value, example here is: 2
+    
+            # python3 will use http.client.HTTPSConnection
+            if sys.version_info >= (3, 0):
+                conn=http.client.HTTPSConnection(ip,timeout=2)
+            else:
+                conn=httplib.HTTPSConnection(ip,timeout=2)
+    
+    
+        and modify join time at line 151, example here is 4:
+    
+            p.join(6)
+        to 
+            p.join(4)
+    
+        This will filter slow IPs, but fewer IPs can be found, and need wait for more time.
+    
+    Enjoy!
