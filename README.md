@@ -117,11 +117,11 @@ time(s)
                 conn=httplib.HTTPSConnection(ip,timeout=2.4)
     
     
-        and modify join time at line 151, example here is 4:
+        and modify join time at line 151, example here is 4.5:
     
             p.join(6)
         to 
-            p.join(4)
+            p.join(4.5)
     
     
         This will filter slow IPs, but fewer IPs can be found, 
