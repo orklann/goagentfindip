@@ -139,7 +139,7 @@ time(s)
         
 3. How to get IPs like files stored in ippool folder?
 
-    Those IPs come from blew linux command, and extract them to ippool folder.
+    Those IPs come from below linux command, and extract them to ippool folder.
     ```
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
     ```
