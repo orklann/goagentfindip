@@ -106,9 +106,9 @@ time(s)
     
             # python3 will use http.client.HTTPSConnection
             if sys.version_info >= (3, 0):
-                conn=http.client.HTTPSConnection(ip,timeout=3)
+                conn=http.client.HTTPSConnection(ip,timeout=2)
             else:
-                conn=httplib.HTTPSConnection(ip,timeout=3)
+                conn=httplib.HTTPSConnection(ip,timeout=2)
         
         to smaller timeout value, example here is: 1.5
     
@@ -122,7 +122,7 @@ time(s)
         and modify join time(about 1.5s greater than timeout above) at line 151, 
         example here is 3.1:
     
-            p.join(6)
+            p.join(4)
         to 
             p.join(3.1)
     
