@@ -151,4 +151,4 @@ time(s)
 
 5. Can you develop an exe for this?
     
-    Sorry, I am not a windows program developer, I am just a Linux amateurs.
+    Sorry, I am not a windows program developer, I am just a Linux amateur.
