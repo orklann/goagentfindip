@@ -136,3 +136,9 @@ time(s)
     I am sorry, neither do I have solutions, but you can modify 
         thread_number(at line 32) to a smaller value, for example, 50, 
         and try again.
+        
+3. How to get IPs?
+
+Those IPs come frome:
+    nslookup -q=TXT _netblocks.google.com 8.8.8.8
+and extract them to files
