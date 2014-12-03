@@ -143,6 +143,8 @@ time(s)
     ```
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
     ```
+    If Google's DNS 8.8.8.8 is blocked by you ISP, Please try replace 8.8.8.8 to you ISP's DNS.
+    
 4. Why not encrypt ippool's IPs?
 
     It's all most Google's IPs, not GCC IPs, There is no need to encrypt them.
