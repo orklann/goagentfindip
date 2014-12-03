@@ -38,8 +38,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         Please download python from the official: 
             https://www.python.org/downloads/
         after install python, double click findip.py. 
+        
+    (You may need Ctrl+C to stop when you feel IPs enough.)
 ```
-(You may need Ctrl+C to stop when you feel IPs enough.)
+
 
 #Notice:
 
