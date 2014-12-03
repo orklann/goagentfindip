@@ -148,3 +148,7 @@ time(s)
 4. Why not encrypt ippool's IPs?
 
     It's all most Google's IPs, not GCC IPs, There is no need to encrypt them.
+
+5. Can you develop an exe for this?
+    
+    Sorry, I am not a windows program developer, I am just a Linux amateurs.
