@@ -137,10 +137,11 @@ time(s)
         thread_number(at line 32) to a smaller value, for example, 50, 
         and try again.
         
-3. How to get IPs?
+3. How to get files in ippool folder?
 
-    Those IPs come frome:
+    Those IPs come from blew linux command, and extract them to ippool folder.
     ```
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
     ```
-    and extract them to files
+4. Why not encrypt ippool's IPs?
+    It's all most Google's IPs, not GCC IPs, There is no need to encrypt them.
