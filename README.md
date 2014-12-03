@@ -144,4 +144,5 @@ time(s)
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
     ```
 4. Why not encrypt ippool's IPs?
+
     It's all most Google's IPs, not GCC IPs, There is no need to encrypt them.
