@@ -30,11 +30,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 8. Python and Python3 support.
 
 #How to run?
+```
     Linux and MAC OS:
         python findip.py or python3 findip.py
+        
     Windows:
-        after install python, double click findip.py.
-        (python, please download from official: https://www.python.org/downloads/)
+        after install python, double click findip.py. 
+        (python, please download from the official: https://www.python.org/downloads/)
+```
 (You may need Ctrl+C to stop when you feel IPs enough.)
 
 #Notice:
