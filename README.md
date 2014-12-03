@@ -143,7 +143,7 @@ time(s)
     ```
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
     ```
-    If Google's DNS 8.8.8.8 is blocked by your ISP, Please try replace 8.8.8.8 to your ISP's DNS.
+    If Google's DNS 8.8.8.8 is blocked by your ISP, please replace 8.8.8.8 to your ISP's DNS.
     
 4. Why not encrypt ippool's IPs?
 
