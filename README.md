@@ -139,6 +139,8 @@ time(s)
         
 3. How to get IPs?
 
-Those IPs come frome:
+    Those IPs come frome:
+    ```
     nslookup -q=TXT _netblocks.google.com 8.8.8.8
-and extract them to files
+    ```
+    and extract them to files
