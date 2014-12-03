@@ -39,9 +39,9 @@ def iplookup(ip,q):
     try:
         # python3 will use http.client.HTTPSConnection
         if sys.version_info >= (3, 0):
-            conn=http.client.HTTPSConnection(ip,timeout=3)
+            conn=http.client.HTTPSConnection(ip,timeout=2)
         else:
-            conn=httplib.HTTPSConnection(ip,timeout=3)
+            conn=httplib.HTTPSConnection(ip,timeout=2)
 
         conn.request("GET", "/")
         st=time.time()
@@ -148,7 +148,7 @@ if __name__ == '__main__':
                 p.start()
 
             for p in procs:
-                p.join(6)
+                p.join(4)
                 if p.is_alive():
                     p.terminate() 
                     
