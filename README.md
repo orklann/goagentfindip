@@ -151,4 +151,4 @@ time(s)
 
 5. Can you develop an exe for this?
     
-    Sorry, I am not a windows program developer, I am just a Linux amateur.
+    Sorry, I am not a windows program developer, I am just a Linux amateur. Yes, I want to do that, but failed when try to convert py to exe, followed this tutorial http://www.py2exe.org/index.cgi/Tutorial.
