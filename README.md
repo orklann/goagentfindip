@@ -35,8 +35,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         python findip.py or python3 findip.py
         
     Windows:
+        Please download python from the official: 
+            https://www.python.org/downloads/
         after install python, double click findip.py. 
-        (python, please download from the official: https://www.python.org/downloads/)
 ```
 (You may need Ctrl+C to stop when you feel IPs enough.)
 
