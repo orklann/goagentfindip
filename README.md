@@ -137,7 +137,7 @@ time(s)
         thread_number(at line 32) to a smaller value, for example, 50, 
         and try again.
         
-3. How to get files in ippool folder?
+3. How to get IPs like files stored in ippool folder?
 
     Those IPs come from blew linux command, and extract them to ippool folder.
     ```
