@@ -140,7 +140,7 @@ time(s)
 2. Windows hangs or freezes when run this program?
 
     I am sorry, neither do I have solutions, but you can modify 
-        thread_number(at line 32) to a smaller value, for example, 50, 
+        thread_number(at line 32) to a smaller value, for example, 25 or 15, 
         and try again.
         
 3. How to get IPs like files stored in ippool folder?
