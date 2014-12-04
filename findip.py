@@ -29,7 +29,7 @@ ip_queue=multiprocessing.Queue()
 ip_max_need=250
  
 # how many ip parallelly check?, one ip one threadper.
-thread_number=100
+thread_number=50
 
 # store good ip
 google_ip=[]
