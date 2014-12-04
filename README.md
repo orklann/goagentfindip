@@ -104,7 +104,7 @@ time(s)
     Second,
     
         Too many IPs in proxy.ini, will slow down your average speed. I personally thank 
-            about 40 IPs will be nice.
+            about 100 IPs will be nice.
     
     However you also can try to find faster IPs by modifying findip.py file:
     
